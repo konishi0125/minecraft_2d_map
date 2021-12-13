@@ -21,8 +21,8 @@ python -m venv venv
 ```
 他にmcpiが必要
 
-black_and_white.py:25~27行\
-color.py:29~31行\
+black_and_white.py:25-27行\
+color.py:29-31行\
 プログラム側から座標を入力するときなぜか座標がずれるため修正\
 修正値はワールドによって違う
 
