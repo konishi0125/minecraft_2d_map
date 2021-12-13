@@ -35,5 +35,5 @@ color.py:29-31行\
 path:画像のパス\
 size:ピクセルアートのサイズ size×sizeになる\
 x, y, z:ピクセルアートの左上の座標\
---color_convertor:色相変換指定 デフォルトはsrgbxyz 他にciexyz,srgbcxyz,adobexyzがある\
+--color_convertor:色相変換指定 デフォルトはsrgbxyz 他にciexyz, srgbcxyz, adobexyzがある\
 --brightness:画像の輝度調整 デフォルトは1
