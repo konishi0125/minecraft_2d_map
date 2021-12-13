@@ -3,7 +3,7 @@ Make pixel art in minecraft from .jpg file
 マイクラで.jpgファイルからピクセルアートを作る\
 _black_and_white.py:白黒2色\
 _color.py:色付き\
-_color.pyで使われるブロックは羊毛16色、砂岩、金ブロック、オークの木材、土
+_color.pyで使われるブロックは羊毛16色、砂岩、金ブロック、本棚、土
 
 # 必要なもの
 minecraft JE (Raspberry Jam Modが適用されているもの)
