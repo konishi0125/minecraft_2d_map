@@ -2,6 +2,7 @@ import time
 import argparse
 import numpy as np
 import cv2
+from PIL import Image
 import mcpi.minecraft as minecraft
 import mcpi.block as block
 import pic2map
@@ -31,13 +32,14 @@ corner[2] -= 136
 mc = minecraft.Minecraft()
 
 #カメラ起動
-camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(1, cv2.CAP_DSHOW)
 
 while True:
     ret, frame = camera.read()  # フレームを取得
+    frame = Image.fromarray(frame)
     im = pic2map.resize_picture(frame, map_size, brightness)
     im_color = pic2map.to_color(im, color_convertor)
-    patting_im_color = np.array(pic2map.patting(im_color))
+    im = np.array(pic2map.patting(im_color))
 
     #ブロックの配置
     for i in range(map_size):
@@ -57,4 +59,8 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-    time.sleep(1)
+    #time.sleep(0.1)
+
+# 撮影用オブジェクトとウィンドウの解放
+camera.release()
+cv2.destroyAllWindows()
