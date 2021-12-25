@@ -3,6 +3,17 @@ from PIL import Image
 import matplotlib.pyplot as plt
 from PIL import ImageEnhance
 
+#リサイズ #輝度の変換
+def resize_picture(im, map_size, brightness):
+    con = ImageEnhance.Brightness(im)
+    im = con.enhance(brightness)
+    if im.size[0] > im.size[1]:
+        resize_rate = map_size / im.size[0]
+    else:
+        resize_rate = map_size / im.size[1]
+    im = im.resize((round(resize_rate*im.size[0]), round(resize_rate*im.size[1])))
+    return im
+
 #画像の読み込み、リサイズ
 def load_picture(file_path, map_size, brightness):
     im = Image.open(file_path)
