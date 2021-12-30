@@ -32,7 +32,7 @@ corner[2] -= 136
 mc = minecraft.Minecraft()
 
 #カメラ起動
-camera = cv2.VideoCapture(1, cv2.CAP_DSHOW)
+camera = cv2.VideoCapture(1)
 
 while True:
     ret, frame = camera.read()  # フレームを取得
